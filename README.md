@@ -28,6 +28,10 @@ For more advanced usage documentation, see [here](docs/advanced.md).
 - JupyterLab >= 3.0
   - older versions are supported in previous releases available on PyPI and npm, check [releases](https://github.com/jupyterlab/jupyterlab-latex/releases)
 - Python >= 3.6
+- jupyterlab-lsp == 3.0.0
+  - can be installed using conda with `conda install -c conda-forge jupyterlab-lsp==3.0.0`
+- texlab >= 2.2.2
+  - can be installed using conda with `conda install -c conda-forge texlab`
 - An application that can compile `.tex` files to PDF (e.g., `pdflatex`, `xelatex`; use `pdflatex.exe` on Windows with MiKTeX). This application must be available as a command in the same environment as the notebook server.
 - An application that can process `.bib` files for producing bibliographies. As with the LaTeX command, this must be available in the same environment as the notebook server.
 
@@ -54,6 +58,10 @@ jupyter server extension list
 and see the block like this in the output
 
 ```
+jupyter_lsp enabled
+    - Validating jupyter_lsp...
+      jupyter_lsp 1.5.1 OK
+
 jupyterlab_latex enabled
     - Validating jupyterlab_latex...
       jupyterlab_latex 3.1.0 OK
@@ -68,6 +76,7 @@ jupyter labextension list
 and see the block like this in the output
 
 ```
+@krassowski/jupyterlab-lsp v3.0.0 enabled OK (python, jupyterlab_lsp)
 @jupyterlab/latex v3.1.0 enabled OK (python, jupyterlab-latex)
 ```
 
