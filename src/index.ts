@@ -42,7 +42,11 @@ import { ILauncher } from '@jupyterlab/launcher';
 
 import { LabIcon } from '@jupyterlab/ui-components';
 
-import { IFileBrowserFactory } from '@jupyterlab/filebrowser';
+import {
+  FileBrowser,
+  FileBrowserModel,
+  IFileBrowserFactory
+} from '@jupyterlab/filebrowser';
 
 import { ICommandPalette } from '@jupyterlab/apputils';
 
@@ -404,6 +408,27 @@ function activateLatexPlugin(
         commands.execute(CommandIDs.openLatexPreview);
       };
 
+      const execOpenFileExplorer = () => {
+        //let filebrowser = new FileBrowserModel(FileBrowserModel.IOptions);
+        console.log('Click');
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = () => {
+          if (input.files) {
+            var file = input.files[0];
+            //file => FileBrowserModel.upload(file);
+            var reader = new FileReader();
+            const objectURL = window.URL.createObjectURL(file);
+            console.log(objectURL);
+            console.log(file.type);
+            console.log(file.name);
+            console.log(input.value);
+            console.log(reader.readAsDataURL(file));
+          }
+        };
+        input.click();
+      };
+
       const insertSubscript = () => {
         InputDialog.getText({ title: 'Provide Desired Subscript' }).then(
           value => {
@@ -547,6 +572,13 @@ function activateLatexPlugin(
         }
       };
 
+      const imageButton = new ToolbarButton({
+        className: 'open-fileexplorer',
+        label: 'image',
+        onClick: execOpenFileExplorer,
+        tooltip: 'Click to select an image'
+      });
+
       const previewButton = new ToolbarButton({
         className: 'run-latexPreview-command',
         label: 'Preview',
@@ -619,6 +651,7 @@ function activateLatexPlugin(
         panel.toolbar.insertItem(10, 'underline', underlineButton);
         panel.toolbar.insertItem(10, 'bullet-list', bulletListButton);
         panel.toolbar.insertItem(10, 'numbered-list', numberedListButton);
+        panel.toolbar.insertItem(10, 'Image', imageButton);
       }
       return new DisposableDelegate(() => {
         previewButton.dispose();
@@ -630,6 +663,7 @@ function activateLatexPlugin(
         underlineButton.dispose();
         bulletListButton.dispose();
         numberedListButton.dispose();
+        imageButton.dispose();
       });
     }
   }
