@@ -42,9 +42,12 @@ import { ILauncher } from '@jupyterlab/launcher';
 
 import { LabIcon } from '@jupyterlab/ui-components';
 
+//import { Uploader } from '@jupyterlab/upload';
+
 import {
-  FileBrowser,
-  FileBrowserModel,
+  //FileBrowser,
+  //FileBrowserModel,
+  Uploader,
   IFileBrowserFactory
 } from '@jupyterlab/filebrowser';
 
@@ -571,7 +574,7 @@ function activateLatexPlugin(
           }
         }
       };
-
+      const uploader = new Uploader();
       const imageButton = new ToolbarButton({
         className: 'open-fileexplorer',
         label: 'image',
@@ -652,6 +655,7 @@ function activateLatexPlugin(
         panel.toolbar.insertItem(10, 'bullet-list', bulletListButton);
         panel.toolbar.insertItem(10, 'numbered-list', numberedListButton);
         panel.toolbar.insertItem(10, 'Image', imageButton);
+        panel.toolbar.insertItem(10, 'Image', uploader);
       }
       return new DisposableDelegate(() => {
         previewButton.dispose();
@@ -664,6 +668,7 @@ function activateLatexPlugin(
         bulletListButton.dispose();
         numberedListButton.dispose();
         imageButton.dispose();
+        uploader.dispose();
       });
     }
   }
