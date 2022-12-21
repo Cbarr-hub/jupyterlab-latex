@@ -52,9 +52,8 @@ jobs:
     - name: Integration test
       run: |
         echo $PATH
-        find / -name jupyter-serverextension
-        jupyter serverextension list
         jupyter labextension list 
+        jupyter serverextension list
         jupyter serverextension list 2>&1 | grep -ie "jupyterlab_latex.*OK"
         jupyter labextension list 2>&1 | grep -ie "@jupyterlab/latex.*OK"
 
