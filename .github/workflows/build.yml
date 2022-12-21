@@ -51,6 +51,8 @@ jobs:
         python -m pip install .
     - name: Integration test
       run: |
+        echo $PATH
+        ls ~/.local/bin/
         jupyter serverextension list
         jupyter labextension list 
         jupyter serverextension list 2>&1 | grep -ie "jupyterlab_latex.*OK"
