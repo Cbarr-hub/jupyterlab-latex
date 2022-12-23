@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - "actions_test"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.3.4
+    - name: Docker Setup
+      uses: docker-practice/actions-setup-docker@master
+    - name: Create Container Script
+      run: |
+        echo ls ~
+        echo ls ~/runner/
+        ~/
+        
+
