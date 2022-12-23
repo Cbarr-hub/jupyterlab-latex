@@ -1,4 +1,4 @@
-name: Build
+name: Latex Compiler Test
 
 on:
   push:
@@ -15,8 +15,9 @@ jobs:
       uses: docker-practice/actions-setup-docker@master
     - name: Create Container Script
       run: |
-        echo ls ~
-        echo ls ~/runner/
-        ~/
+        echo ls ~/work/
+        ~/work/jupyterlab-latex/jupyterlab-latex
+        
+        
         
 
