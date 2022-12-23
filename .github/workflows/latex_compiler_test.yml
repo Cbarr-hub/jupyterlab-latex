@@ -18,6 +18,6 @@ jobs:
         ls $GITHUB_WORKSPACE
         ls $GITHUB_WORKSPACE/jupyterlab-latex
         
-        ./$GITHUB_WORKSPACE/jupyterlab-latex/utility/create_con.sh
+        ./$GITHUB_WORKSPACE/utility/create_con.sh
 
         
