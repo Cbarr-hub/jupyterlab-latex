@@ -15,9 +15,6 @@ jobs:
       uses: docker-practice/actions-setup-docker@master
     - name: Create Container Script
       run: |
-        ls $GITHUB_WORKSPACE
-        ls $GITHUB_WORKSPACE/jupyterlab-latex
-        
         ./$GITHUB_WORKSPACE/utility/create_con.sh
 
         
