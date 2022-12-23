@@ -17,6 +17,7 @@ jobs:
       run: |
         ls $GITHUB_WORKSPACE
         ls $GITHUB_WORKSPACE/utility
+        cat $GITHUB_WORKSPACE/utility/create_con.sh
         .$GITHUB_WORKSPACE/utility/create_con.sh
 
         
