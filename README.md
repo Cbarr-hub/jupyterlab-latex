@@ -1,14 +1,15 @@
 # JupyterLab LaTeX
 
-|       build       |              stable              |              latest              |
-| :---------------: | :------------------------------: | :------------------------------: |
-| [![ci-badge]][ci] | [![binder-badge]][binder-stable] | [![binder-badge]][binder-latest] |
+|       build       |              stable              |              latest              |           pdflatex           |
+| :---------------: | :------------------------------: | :------------------------------: | :--------------------------: |
+| [![ci-badge]][ci] | [![binder-badge]][binder-stable] | [![binder-badge]][binder-latest] | [![ci-badge]][pdflatex-test] |
 
 [ci-badge]: https://github.com/jupyterlab/jupyterlab-latex/actions/workflows/build.yml/badge.svg
 [ci]: https://github.com/jupyterlab/jupyterlab-latex/actions/workflows/build.yml?query=branch/master
 [binder-badge]: https://mybinder.org/badge_logo.svg
 [binder-stable]: https://mybinder.org/v2/gh/jupyterlab/jupyterlab-latex.git/3.1.0?urlpath=lab/tree/sample.tex
 [binder-latest]: https://mybinder.org/v2/gh/jupyterlab/jupyterlab-latex.git/master?urlpath=lab/tree/sample.tex
+[pdflatex-test]: https://github.com/Cbarr-hub/jupyterlab-latex/actions/workflows/pdflatex.yml
 
 An extension for JupyterLab which allows for live-editing of LaTeX documents.
 

@@ -1,4 +1,4 @@
-name: Latex Compiler Test
+name: pdfTeX Compiler Test
 
 on:
   push:
@@ -16,4 +16,5 @@ jobs:
     - name: Create Container 
       run: |
         docker build -t jup --build-arg COMPILER=pdflatex ./utility/
+        docker run -it --name jup -p 8888:8888 -p 4040:4040 jup 
 
